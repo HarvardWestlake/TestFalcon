@@ -23,7 +23,9 @@ public class Robot extends TimedRobot {
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
-  private final SendableChooser<String> m_chooser = new SendableChooser<>();  PS4Controller con = new PS4Controller(0);
+  private final SendableChooser<String> m_chooser = new SendableChooser<>();
+
+  PS4Controller con = new PS4Controller(0);
 
   TalonFX testMotor;
 
@@ -90,7 +92,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    testMotor.setVoltage(6);
+    testMotor.setVoltage(con.getLeftY() * 6);
     System.out.println (con.getLeftY()) ;
   }
 
