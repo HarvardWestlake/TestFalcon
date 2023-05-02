@@ -39,8 +39,6 @@ public class Robot extends TimedRobot {
 
 
     testMotor = new TalonFX(61);
-    
-    testMotor.setVoltage(6)
 
   }
 
